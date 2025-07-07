@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game - Industry Standard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <h1>TETRIS</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span>Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span>Level:</span>
+                    <span id="level">1</span>
+                </div>
+                <div class="stat">
+                    <span>Lines:</span>
+                    <span id="lines">0</span>
+                </div>
+                <div class="stat">
+                    <span>High Score:</span>
+                    <span id="highscore">0</span>
+                </div>
+            </div>
+            <div class="performance-info" id="performance">
+                <div>FPS: <span id="fps">60</span></div>
+                <div>Memory: <span id="memory">0</span> MB</div>
+                <div>Errors: <span id="errors">0</span></div>
+            </div>
+            <div class="controls">
+                <h3>Controls:</h3>
+                <p>← → Move</p>
+                <p>↑ Rotate</p>
+                <p>↓ Soft Drop</p>
+                <p>Space Hard Drop</p>
+                <p>P Pause</p>
+                <p>R Restart</p>
+            </div>
+        </div>
+        <div class="game-area">
+            <canvas id="tetris" width="240" height="400"></canvas>
+        </div>
+    </div>
+
+    <!-- Game Over Overlay -->
+    <div id="gameOverOverlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>Press R to restart</p>
+        </div>
+    </div>
+
+    <!-- Pause Overlay -->
+    <div id="pauseOverlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Paused</h2>
+            <p>Press P to resume</p>
+        </div>
+    </div>
+
+    <!-- Inactivity Overlay -->
+    <div id="inactivityOverlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Auto-Paused</h2>
+            <p>60 seconds of inactivity</p>
+            <p>Press any key to resume</p>
+        </div>
+    </div>
+
+    <!-- Flash Effect -->
+    <div id="flash" class="flash"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
